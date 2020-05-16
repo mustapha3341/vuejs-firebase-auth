@@ -19,6 +19,17 @@ class Firebase {
 
 		this.auth = app.auth();
 	}
+
+	//Auth API
+	createUser = (email, password) => {
+		this.auth.createUserWithEmailAndPassword(email, password);
+	};
+
+	loginUser = (email, password) => {
+		this.auth.signInWithEmailAndPassword(email, password);
+	};
+
+	resetPassword = (email) => this.auth.sendPasswordResetEmail(email);
 }
 
 export default Firebase;
